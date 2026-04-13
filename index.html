@@ -568,6 +568,17 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) {
+                    navbar.classList.remove('bg-transparent', 'navbar-dark');
+                    navbar.classList.add('bg-white', 'navbar-light', 'shadow-sm');
+                } else {
+                    navbar.classList.add('bg-transparent', 'navbar-dark');
+                    navbar.classList.remove('bg-white', 'navbar-light', 'shadow-sm');
+                }
+            });
+
             const filterButtons = document.querySelectorAll('.filtering span');
             const items = document.querySelectorAll('.items');
 
